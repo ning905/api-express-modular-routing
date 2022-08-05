@@ -12,9 +12,13 @@ app.use(morgan("dev"));
 
 // REQUIRE ROUTERS
 const usersRouter = require("./src/routers/users");
+const filmRouter = require("./src/routers/films");
+const bookRouter = require("./src/routers/books");
 
 // ADD ROUTERS TO APP
-
+app.use("/users", usersRouter);
+app.use("/films", filmRouter);
+app.use("/books", bookRouter);
 
 /* START SERVER */
 app.listen(port, () => {
